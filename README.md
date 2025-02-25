@@ -1,8 +1,13 @@
-# Signal
+# Signal (Closure)
 Very small, basically Fundamental Signal Implementation compliant with [tc39 Signals proposal](https://github.com/tc39/proposal-signals).
 
 Adaptation from [Ryan Carniato's Signal Article](https://dev.to/ryansolid/building-a-reactive-library-from-scratch-1i0p).
 
+## Explanation
+
+This is a kind of signal that hides subscription behind `get` method, which is only activated when used in a callback closure, which passed to a function ("subscriber") that tracks every "dependency" (that is invoked `get` method) within it and invokes the callback every time any dependency change. The `set` method works **basically** the same way as per [Event-based Signal](https://github.com/FrameMuse/event-signal).
+
+Closure-based Signal can be interpreted as **Implicit** comparing to [Event-based Signal](https://github.com/FrameMuse/event-signal).
 
 ## Example
 
